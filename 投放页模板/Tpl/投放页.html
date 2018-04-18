@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+        <link rel="stylesheet" type="text/css" href="../Public/css/swiper.min.css">
+        <link rel="stylesheet" type="text/css" href="../Public/css/style.css">
+        <script src="../Public/js/jquery-1.9.1.min.js"></script>
+        <script src="../Public/js/swiper.min.js"></script>            
+</head>
+<body>
+<div class="game-xx-banner">
+<!--------------------------list01-------------------------------------------->       
+    	<div class="swiper-main" id="pic01">
+        
+            <!-- Swiper -->
+            <div class="swiper-container swiper001">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="pic" data-src-wide="../Public/images/img01-big.png" src="../Public/images/img01.png"></div>
+                    <div class="swiper-slide"><img class="pic" data-src-wide="../Public/images/img02-big.png" src="../Public/images/img02.png"></div>
+                    <div class="swiper-slide"><img class="pic" data-src-wide="../Public/images/img03-big.png" src="../Public/images/img03.png"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination pagination001"></div>
+            </div>
+             <!--end Swiper -->
+       	</div>   
+<!--------------------------end list01-------------------------------------------->     
+<div class="clear"></div>   
+    	<div class="swiper-main" >
+        
+            <!-- Swiper -->
+            <div class="swiper-container swiper002">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="pic" data-src-wide="../Public/images/img01-big.png" src="../Public/images/img01.png"></div>
+                    <div class="swiper-slide"><img class="pic" data-src-wide="../Public/images/img02-big.png" src="../Public/images/img02.png"></div>
+                    <div class="swiper-slide"><img class="pic" data-src-wide="../Public/images/img03-big.png" src="../Public/images/img03.png"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination pagination002"></div>
+            </div>
+             <!--end Swiper -->
+       	</div>   
+<!--------------------------end list01-------------------------------------------->     
+    </div>
+        <!-- Initialize Swiper -->    
+        <script>    
+          var mySwiper = new Swiper('.swiper001',{
+        pagination: '.pagination001',
+        slidesPerView: 'auto',    
+        paginationClickable: true,
+        spaceBetween:10,
+        
+      })
+          var mySwiper = new Swiper('.swiper002',{
+        pagination: '.pagination002',
+        slidesPerView: 'auto',    
+        paginationClickable: true,
+        spaceBetween:10,
+        
+      })	  
+	  
+        </script>
+        <!-- end Initialize Swiper -->     
+        
+      
+<!--点击放大-->
+        <div class="carrousel">
+            <div class="wrapper02"><img src="images/"/></div>
+        </div>        
+<script>
+$(function(){
+	var carrousel = $( ".carrousel" );
+	
+	$( "#pic01 .swiper-slide" ).click( function(e){
+	  var src = $(this).find(".pic").attr( "data-src-wide"  );
+	  carrousel.find("img").attr( "src", src );
+	  carrousel.fadeIn( 200 ); 
+	  
+	  $('body').bind("touchmove",function(e){  
+                e.preventDefault();  
+				        }); 
+	   
+	});
+	
+    carrousel.click( function(e){
+			  carrousel.find( "img" ).attr( "src", '' );
+	  carrousel.fadeOut( 200 );
+	  $("body").unbind("touchmove");	
+	  	});	
+
+})
+</script>  
+<!--end 点击放大--> 
+
+<!--点击放大滑动-->
+<div class="big-swiper-main">
+            <!-- Swiper -->
+          <div class="swiper-container swiper-min02">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="pic" src="../Public/images/img01-big.png"></div>
+                    <div class="swiper-slide"><img class="pic" src="../Public/images/img02-big.png"></div>
+                    <div class="swiper-slide"><img class="pic" src="../Public/images/img03-big.png"></div>                
+                </div>
+                <!-- Add Pagination -->
+		        <div class="swiper-pagination swiper-p2"></div>
+            </div>
+             <!--end Swiper -->
+</div>  
+<!--end 点击放大滑动-->  
+<script>
+var listImg=$(".swiper002")
+$(".big-swiper-main").css({"opacity":"0"});
+$(listImg).click(function(){
+	$(".big-swiper-main").css({"z-index":"101","opacity":"1"})
+})
+
+$(".big-swiper-main").click(function(){
+	$(this).css({"z-index":"99","opacity":"0"})
+})
+
+var mySwiper = new Swiper('.swiper-min02', {
+	pagination: '.swiper-p2',
+	autoplay: 2000,//可选选项，自动滑动
+})
+</script>         
+<div class="tishi" style="display:block">
+<img src="../Public/images/mengb-an.png"><!--微信mengb-weixin.png-->
+</div>
+</body>
+</html> 
+ 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<title>canvas-星星</title>
+</head>
+
+<body>
+<canvas id="1" width="200" height="200" style=" border:1px solid red" ></canvas>
+ <script type="text/javascript">
+	var c=document.getElementById('1');
+	var p=c.getContext("2d");
+	
+	//星星	
+	p.moveTo(0,70);
+	p.lineTo(200,70);
+	p.lineTo(0,180);
+	p.lineTo(100,0);
+	p.lineTo(200,180);
+	p.lineTo(0,70);
+	p.stroke();
+	
+	//长方形
+	p.fillStyle="#fff000"
+	p.fillRect(0,0,150,75);
+	
+</script>
+</body>
+</html>
+<!--<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+ </head>
+ <body>
+	<canvas id="1" width="200" height="200" style="border:1px solid red" onmousemove="mousexy(envent)"></canvas>
+ </body>
+ <script type="text/javascript">
+	var c=document.getElementById('1');
+	var p=c.getContext("2d");
+
+	p.moveTo(10,10);
+	p.lineTo(150,50);
+	p.lineTo(10,50);
+	p.stroke();
+ </script>
+</html>-->

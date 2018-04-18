@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../Public/css/swiper.min.css">
+    	<link rel="stylesheet" type="text/css" href="../Public/css/base.css">
+    <script src="../Public/js/jquery-1.10.1.min.js"></script>
+    <script src="../Public/js/swiper.min.js"></script>
+    <style>
+	.banner05 {
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+	}
+	.banner05 .swiper-slide {
+		width: 40%;
+	}	
+	</style>
+</head>
+<body>
+		<!--banner start -->
+		<div class="banner05">
+			<!-- Swiper -->
+		    <div class="swiper-container swiper-min01">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide">
+		            	<img src="../Public/images/banner.jpg" />
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="../Public/images/banner.jpg" />
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="../Public/images/banner.jpg" />
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="../Public/images/banner.jpg" />
+		            </div>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination swiper-p1"></div>
+		    </div>		    
+		</div>
+		<!--banner end -->
+<script>
+        var swiper = new Swiper('.swiper-min01', {
+	        pagination: '.swiper-p1',
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+						loop:"true",
+
+			initialSlide :1,
+            coverflow: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows : true
+            }
+        });	
+</script>
+    
+	
+</body>
+</html>

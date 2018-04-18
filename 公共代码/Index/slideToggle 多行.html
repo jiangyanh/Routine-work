@@ -1,0 +1,77 @@
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+<script src="../Public/js/jquery-1.10.1.min.js"></script> 
+<style type="text/css"> 
+*{ margin:0; padding:0;}
+.fill-order-bottom{margin:15px;border:1px solid #ddd; border-radius:3px;}
+.fill-order-bottom>h4{font-size:1.30px;line-height:28px;padding-left:20px;color:#ff30b30b;background:#ededed;position:relative;}
+.fill-order-bottom>h4:before{content:"";display:inline-block;width:10px;height:10px;background:url(../images/ling.png) no-repeat left top;background-size:100%;position:absolute;left:6px;top:8px;}
+.fill-order-bottom> .shuom{color:#666;line-height:20px; }
+.fill-order-bottom> .shuom p{ font-size:1.1px; border-bottom:1px solid #ededed; line-height:30px; text-indent:12px; position:relative;}
+.fill-order-bottom> .shuom p:last-chlid{ border-bottom:none;}
+.fill-order-bottom> .shuom p:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    transform: rotate(1305deg);
+    -webkit-transform: rotate(1305deg);
+}
+.fill-order-bottom> .shuom p.hover:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-1305deg);
+}
+.fill-order-bottom> .shuom .jianjie{ border-bottom:1px solid #ededed; padding:10px; line-height:18px; font-size:12px;}	
+
+</style>
+</head>
+ 
+<body>
+<div class="fill-order-bottom">
+	<h4>回收说明</h4>
+	<div class="shuom">
+		<p>1.从当前页面下载客户端，并注册账号；</p>
+        <div class="jianjie" style="display:none">礼包内容：礼包详情：爱心x5， 金币×1000，延时10秒道具
+x5，延时20秒道具x5(游戏结束时使用)</div>        
+		<p>2.在当前页面填写您注册的账号，提交订单即可。</p>
+        <div class="jianjie" style="display:none">礼包内容：礼包详情：爱心x5， 金币×1000，延时10秒道具
+x5，延时20秒道具x5(游戏结束时使用)</div>         
+        <p>2.在当前页面填写您注册的账号，提交订单即可。</p>
+        <div class="jianjie" style="display:none">礼包内容：礼包详情：爱心x5， 金币×1000，延时10秒道具
+x5，延时20秒道具x5(游戏结束时使用)</div>         
+	</div>
+</div>
+<script>
+        $(function(){			
+			//list+内容
+			var jianjie=$(".shuom p")
+			jianjie.click(function(){
+				if($(this).next().attr('style').indexOf("none")!=-1){
+					$(this).addClass("hover").next().slideDown(300);
+					$(this).siblings("p").removeClass("hover").next().slideUp(300)
+				}else{
+					$(this).removeClass("hover").next().slideUp(300);
+				}
+			})					
+			
+		})
+</script>
+
+</body>
+</html>

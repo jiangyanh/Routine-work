@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+    	<link rel="stylesheet" href="../Public/css/base.css"> 
+    <script src="../Public/js/jquery-1.9.1.min.js"></script>        
+</head>
+<style>
+/*设置*/
+.ser-set ul{ background:#fff;}
+.ser-set ul li{ width:100%; padding:0 12px; box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Safari */ height:43px; line-height:43px; font-size:1.3rem; position:relative; color:#666;}
+	/*清除缓存-共3.0M*/
+.ser-set ul li i{ background:url(../images/set-icon01.png) no-repeat right center; min-width:14px; margin-top:10px; height:26px; line-height:26px; float:right; display:inline-block; background-size:14px auto; color:#b6b6b6; padding-right:25px;}
+.ul-border li{ border-bottom:1px solid #e4e4e4;}
+.ul-border li i .toux-img{ width:30px; height:30px; border-radius:50%; vertical-align:middle; margin-top:-5px;}
+	/*更新*/
+	.iphone-button{ color:#fff; font-size:12px; width:55px; height:26px; line-height:26px; border-radius:20px; position: absolute; right:10px; top:10px;}
+	.iphone-button.style01{ background:#a4abff;}
+	.iphone-button.style01 span{ float:right; margin:1px 1px 0 0; }
+	.iphone-button.style02{ background:#dbdbdb; color:#333;}
+	.iphone-button.style02 span{ float:left; margin: 1px 0 0 1px; }
+	.iphone-button span{ width:24px; height:24px; background:#fff; background-size:15px auto; text-align:center; display:inline-block; border-radius:50%;}	
+	/*end 更新*/
+
+	/*设置按钮*/
+.yy-input-box {
+    width:82%; margin-left:9%; margin-top:5%;
+}	
+.yy-btn {
+    margin: 20px auto 10px auto;
+    display: block;
+    width: 100%; line-height:24px;  padding: 7px 8px;
+    border-radius: 20px; border:none;
+}
+.btn-bg{ background: #ff6c00; color: #fff;}
+.btn-border{ border:1px solid #ff6c00; background:#fff; color: #ff6c00;}
+.btn-border-999{ border:1px solid #c6c6c6; background:#fff; color: #666;}	
+	/*end 设置按钮*/
+/*end 设置*/
+</style>
+<body class="viewport04 bg-f2">
+<header class="ser-header box-shadow">
+	<div class="ser-header-left img01">
+                    <a href="">
+                        <img src="../Public/images-index/head-back.png">
+                    </a>
+	</div>
+                 设置  
+	<div class="ser-header-right img01">
+			<a href="#"><img src="../Public/images/little-icon06.png"></a>
+	</div>                                 
+</header>
+<div class="ser-set">
+	<ul class="ul-border">
+    	<li>
+        	<i></i>个人资料
+        </li> 
+    	<li>
+        	<i></i>绑定手机号
+        </li>             
+    	<li>
+        	<i></i>修改密码
+        </li>
+    	<li>
+        	<i></i>游戏账号
+        </li>        
+    </ul>  
+	<ul class="ul-border mt10">
+    	<li>
+        	<div class="iphone-button style02"><span></span></div>
+            WIFI环境下自动更新客户端
+        </li> 
+    	<li>
+        	<i>共3.0M</i>清除缓存
+        </li>  
+    	<li>
+        	<i>已是最新版本1.2.0</i>检查更新
+        </li>
+    	<li>
+        	<i></i>关于我们
+        </li>                   
+    	<li>
+        	<i></i>联系我们
+        </li>
+    	<li>
+        	<i></i>帮助中心
+        </li>     
+    </ul>      
+</div>    
+<div class="yy-input-box">
+		<input type="button" class="yy-btn btn-border-999 fs16" value="退出登录">    
+</div>
+<script>
+$(function(){
+	$(".iphone-button").click(function(){
+		if($(this).attr('class').indexOf("style01")!=-1){
+			$(this).removeClass("style01").addClass("style02");	
+		}else if($(this).attr('class').indexOf("style02")!=-1){
+			$(this).removeClass("style02").addClass("style01");
+		}
+	})
+})
+</script>
+</body>
+</html>

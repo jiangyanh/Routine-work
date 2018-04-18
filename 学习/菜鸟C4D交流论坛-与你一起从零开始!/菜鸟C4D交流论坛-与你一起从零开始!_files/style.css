@@ -1,0 +1,36 @@
+#rocket-to-top *{list-style:none;border:0;}
+#rocket-to-top div {
+    left:0;
+    margin:0;
+    overflow:hidden;
+    padding:0;
+    position:absolute;
+    top:0;
+    width:149px;
+}
+#rocket-to-top .level-2 {
+    background:url("../images/rocket_1.png") no-repeat scroll -149px 0 transparent;
+    display:none;
+    height:200px;
+    opacity:0;
+    z-index:1;
+}
+#rocket-to-top .level-3 {
+    background:none repeat scroll 0 0 transparent;
+    cursor:pointer;
+    display:block;
+    height:150px;
+    z-index:2;
+}
+#rocket-to-top {
+    background:url("../images/rocket_1.png") no-repeat scroll 0 0 transparent;
+    cursor:default;
+    display:block;
+    height:200px;
+    margin:-100px 0 0;
+    overflow:hidden;
+    padding:0;
+    position:fixed;
+    width:149px;
+    z-index:9999;
+}

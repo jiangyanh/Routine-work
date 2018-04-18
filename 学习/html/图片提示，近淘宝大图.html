@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jquery test</title>
+<script src="js/jquery-3.1.1.min.js"></script>
+<style type="text/css">
+ul li{ width:220px; height:220px; text-align:center; float:left; margin:10px;}
+ul li img{ width:100%;}
+div{ position:absolute;}
+</style>
+</head>
+
+<body>
+<ul>
+	<li><a href="images/a1.jpg" class="tooltip" title="苹果 iPod 001"><img src="images/a1.jpg"/ alt="苹果 iPod"></a></li>
+    <li><a href="images/a2.jpg" class="tooltip" title="苹果 iPod 002"><img src="images/a2.jpg"/ alt="苹果 iPod"></a></li>
+	<li><a href="images/a4.jpg" class="tooltip" title="苹果 iPod 003"><img src="images/a4.jpg"/ alt="苹果 iPod"></a></li>
+	<li><a href="images/a5.jpg" class="tooltip" title="苹果 iPod 004"><img src="images/a5.jpg"/ alt="苹果 iPod"></a></li>
+</ul>
+</body>
+<script type="text/javascript">
+$(function(){
+	var x=10;
+	var y=20;
+	$("a.tooltip").mouseover(function(e){
+		this.myTitle=this.title;
+		this.title="";
+		var imgTitle=this.myTitle?"<br/>"+this.myTitle:"";
+		var tooltip="<div id='tooltip'><img src='"+this.href +"' alt='产品预览图' />"+imgTitle+"</div>";
+		$("body").append(tooltip);
+		$("#tooltip")
+			.css({
+				"top":(e.pageY+y)+"px",
+				"left":(e.pageX+y)+"px"
+				
+				}).show("fast");
+	}).mouseout(function(){
+		this.title=this.myTitle;
+		$("#tooltip").remove();	
+	}).mousemove(function(e){
+		$("#tooltip")
+			.css({
+					"top":(e.pageY+y)+"px","left":(e.pageX+x)+"px"
+				})
+		})
+})
+</script>
+</html>

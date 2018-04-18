@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="../Public/js/jquery-1.10.1.min.js"></script>
+</head>
+<style>
+*{ margin:0px; padding:0px;}
+ul {
+  font-size: 0;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  margin: 0px auto;
+  user-select: none;
+}
+ 
+li {
+  display: inline-block;
+  width: 33.3333%;
+  height: 60px;
+  background: #E95546;
+  font-size: 16px;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.slider{ background:#4FC2E5; height:4px; position:absolute; left:0; bottom:0;    transition: all 0.5s;}
+
+.ripple{ width:0; height:0; border-radius:50%; background:rgba(255,255,255,.4);  -webkit-transform:scale(0,0);   -ms-transform: scale(0); transform:scale(0,0);   position: absolute;
+  opacity: 1;}
+ .rippleEffect {
+  -webkit-animation: rippleDrop .4s linear;
+  animation: rippleDrop .4s linear;
+}
+ 
+@-webkit-keyframes 
+  rippleDrop {  100% {
+   -webkit-transform: scale(2);
+   transform: scale(2);
+   opacity: 0;
+  }
+}
+@keyframes 
+  rippleDrop {  100% {
+   -webkit-transform: scale(2);
+   transform: scale(2);
+   opacity: 0;
+  }
+}  
+</style>
+<body>
+<ul>
+	<li>Tab One</li>
+	<li>Tab Two</li>
+	<li>Tab Three</li>
+	<li class="slider"></li>
+</ul>
+<script>
+$(function(){
+	var widthLi=$("ul li").width();
+	
+	$("ul li").click(function(e){
+		if($(this).hasClass('silider')){
+            return;
+        }  
+		
+		var index00=$(this).index();
+		var howFar=widthLi*index00;
+		
+		$(".slider").css({"left":howFar+"px"})
+		
+	 $(".ripple").remove();
+	 
+	 var posX=$(this).offset().left; 
+	 //返回匹配元素相对于文档的偏移（位置）。
+	 var posY=$(this).offset().top;
+	 
+	 buttonWidth=$(this).width();
+	 buttonHeight=$(this).height();
+	 
+	 $(this).prepend("<span class='ripple'></span>");//prepend()在被选元素的开头（仍位于内部）插入指定内容。（）内容可包含html标签
+	 
+	 if(buttonWidth>=buttonHeight){
+	 	buttonHeight=buttonWidth;
+	 }else{
+	 	buttonWidth=buttonHeight;
+	 }
+	 
+	 
+	 var x=e.pageX-posX-buttonWidth/2;     
+	 //e.pageX 鼠标指针的位置  ripple是相当于当前li定位的， 所以就得 ripple相对于文档的偏移	  - li相对于文档的位置得到，它当前的位置。而水波纹是一个圆形的，
+	 //所以要减去一半，从而相对于当前位置的上下垂直居中。
+	 var y=e.pageY-posY-buttonHeight/2;
+	 
+	 $(".ripple").css({
+		"width":buttonWidth,"height":buttonHeight,"top":y+"px","left":x+"px"	
+	 }).addClass("rippleEffect");
+					
+		
+		
+		
+	})	
+	
+	
+
+})
+</script>
+
+
+</body>
+</html>

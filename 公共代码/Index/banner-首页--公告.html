@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    	<link rel="stylesheet" type="text/css" href="../Public/css/swiper.min.css">
+    	<link rel="stylesheet" type="text/css" href="../Public/css/base.css">
+    	<script src="../Public/js/jquery-1.9.1.min.js"></script>
+    	<script src="../Public/js/swiper.min.js"></script>
+</head>
+<style>
+/*首页幻灯片*/
+.banner{
+	line-height: 0;
+	position: relative; height:300px;
+}
+.banner .swiper-min01{ height:300px;}
+.banner .swiper-slide{ height:60px; width:100%; line-height:25px; text-align:center; background:#FCF;}
+/*end 首页幻灯片*/
+</style>
+<body>
+		<!--banner start -->
+		<div class="banner">
+			<!-- Swiper -->
+		    <div class="swiper-container swiper-min01">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide">
+自动切换时间间隔1
+		            </div>
+		            <div class="swiper-slide">
+自动切换时间间隔，不设定不会自动切换2
+		            </div>
+		            <div class="swiper-slide">
+手触碰后，仍然继续自动播放3
+		            </div>
+		            <div class="swiper-slide">
+换时间间手触碰后，仍然继续自动播放4
+		            </div>
+		            <div class="swiper-slide">
+自动切换时间间隔5
+		            </div>
+		            <div class="swiper-slide">
+自动切换时间间隔，不设定不会自动切换6
+		            </div>
+		            <div class="swiper-slide">
+手触碰后，仍然继续自动播放7
+		            </div>
+		            <div class="swiper-slide">
+换时间间手触碰后，仍然继续自动播放8
+		            </div>                    
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination swiper-p1"></div>
+		    </div>		    
+		</div>
+		<!--banner end -->
+	<!--footer end --> 
+	<script>
+	    var swiper = new Swiper('.swiper-min01', {
+			direction:"vertical",
+	    	autoplay: 2000,
+			loop:true,
+			slidesPerView:10,
+        	spaceBetween: 5	
+	    });		
+    </script>   	
+</body>
+</html>

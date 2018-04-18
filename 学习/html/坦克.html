@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<title>canvas-坦克</title>
+</head>
+
+<body>
+<canvas id="tankMap" width="400" height="400" style=" background-color:black" ></canvas>
+<script type="text/javascript">
+//得到画布
+var c=document.getElementById("tankMap");
+
+//定义一个位置变量
+var heroX=80;
+var heroY=80;
+
+//得到绘图上下文
+var cxt=c.getContext("2d");
+
+//设置颜色
+cxt.fillStyle="#BA9658";
+
+//左边的矩形
+cxt.fillRect(heroX,heroY,5,30);
+//右边的矩形
+cxt.fillRect(heroX+17,heroY,5,30);
+//画中间的矩形
+cxt.fillRect(heroX+6,heroY+5,10,20);
+//画出坦克的盖子
+cxt.fillStyle="#fef26e";
+cxt.arc(heroX+11,heroY+15,5,0,360,false);
+cxt .fill();
+//画出炮筒
+cxt.strokeStyle="#fef26e"
+cxt.lineWidth=1.5;
+cxt.beginPath();
+cxt.moveTo(heroX+11,heroY+15);
+cxt.lineTo(heroX+11,heroY);
+cxt.closePath();
+cxt.stroke();
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+</head>
+<style>
+	/*弹框样式*/	
+.cover{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index:1001; display:none;
+}	
+	
+.cover-50 {
+    position: fixed;
+    z-index: 1002;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); display:none; width:280px; background:#fff; border-radius:6px; margin:0px auto;
+}	
+	
+
+.center-pack p{ margin:20px; line-height:28px; font-size:14px;}	
+.button-bj{ width:100%; border-radius:0 0 8px 8px;  padding:0 0 20px 0; text-align:center; } 
+.button-bj button{ background:#13bfbd; color:#fff; text-align:center; border-radius:4px; border:none; padding:10px 0; width:50%; font-size:15px;}
+	/*end 弹框样式*/	
+</style>
+<body>
+<!--弹框-->
+<div class="cover" style="display:block">
+    <div class="cover-50 center-pack" style="display:block	">
+            <p>您的商品已经提交成功，官方审核完成即可自动上架。审核时间约1~3个小时，请耐心等待噢~</p>
+            <div class="button-bj">
+                <button>我知道了</button>
+            </div>
+        </div>                  
+    </div> 
+</div>
+<!--end 弹框-->  
+</body>
+</html> 
+ 

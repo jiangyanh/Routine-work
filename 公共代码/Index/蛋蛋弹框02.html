@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+</head>
+<style>
+/*弹框*/
+*{ padding:0; margin:0; font-style:normal;}
+.paopao-cover{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index:1001;
+}	
+.paopao-pack{  
+	position: fixed;
+    z-index: 1002;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);  background:#fff; border-radius:6px; margin:0 7%;}
+.paopao-pack .colse{ position:absolute; top:-50px; right:10px;}		
+.paopao-pack .colse img{ width:30px;}
+.paopao-pack h3{ width:100%; padding:0; margin:0; font-weight:normal;}
+.paopao-pack h3 img{ width:100%;}		
+
+.button-bj{ width:100%; border-radius:0 0 8px 8px;  text-align:center; } 
+.button-bj button{ background:#ff3b3b; color:#fff; text-align:center; border-radius:0 0 4px 4px; border:none; padding:8px 0; width:100%; margin:10px 0 0 0; font-size:15px;}
+/*end 弹框*/
+</style>
+<body>
+<!--弹框-->
+<div class="paopao-cover">
+    <div class="paopao-pack">
+    		<div class="colse"><img src="../Public/images/tk-close.png"></div>
+            <h3><img src="../Public/images/tk-banner02.png"></h3>      
+            <div class="button-bj">
+              <button class="fs16 btn-one">下载泡泡手游</button>
+            </div>                 
+  </div> 
+</div>
+<!--end 弹框-->  
+</body>
+</html> 
+ 

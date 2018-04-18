@@ -1,0 +1,52 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <script src="js/jquery-1.9.1.min.js"></script>   
+    <title></title> 
+</head>
+<body>    
+<input type="text" id="address" value="请输入邮箱地址" />
+<textarea id="password" class="text02">留下您的联系方式：QQ号，手机号，微信均可</textarea>
+<input type="button" value="登录" />
+ <script>
+    $("#address,#password").focus(function(){
+        var txt_value=$(this).val();
+        if(txt_value==this.defaultValue){
+            $(this).val("");
+        }
+    }) 
+    $("#address,#password").blur(function(){
+        var txt_value=$(this).val();
+        if(txt_value==""){
+            $(this).val(this.defaultValue);   //this.defaultValue 当前文本框的默认值
+        }
+    })       
+    </script>
+
+
+   <!--  <script type="text/javascript">
+        $(function () {
+            $("#address,#password").focus(function () {
+                if(!$(this).data("prevval"))
+                {
+                    var val = $(this).val();
+                    $(this).data("prevval", val);
+                    $(this).val("");
+                }
+                else
+                {
+                    if ($(this).val() == $(this).data("prevval"))
+                        $(this).val("");
+                }
+            });
+            $("#address,#password").blur(function () {
+                var prevval = $(this).data("prevval");
+                if ($(this).val() == "")
+                    $(this).val(prevval);
+            });
+        });
+    </script>
+     -->
+</body>
+</html>

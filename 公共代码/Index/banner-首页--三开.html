@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../Public/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/base.css">
+    <script src="../Public/js/jquery-1.9.1.min.js"></script>
+    <script src="../Public/js/swiper.min.js"></script>
+    <style>
+    /*首页幻灯片02*/
+.banner02 .swiper-slide {
+	width: 100%;
+}
+/*end 首页幻灯片02*/
+    </style>
+</head>
+<body>
+		<!--banner start -->
+		<div class="banner02">
+			<!-- Swiper -->
+		    <div class="swiper-container swiper-min02">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide">
+		            	<img src="../Public/images/banner.jpg" />
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="../Public/images/banner.jpg" />
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="../Public/images/banner.jpg" />
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="../Public/images/banner.jpg" />
+		            </div>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination swiper-p1"></div>
+		    </div>		    
+		</div>
+		<!--banner end -->
+	<!--footer end -->    
+	<script>
+	    var swiper = new Swiper('.swiper-min02', {
+	    	autoplay: 1000,//自动切换时间间隔，不设定不会自动切换
+			autoplayDisableOnInteraction : false,//手触碰后，仍然继续自动播放
+	        pagination: '.swiper-p1',
+	        paginationClickable: true, //为true时，点击分页器的指示点分页器会控制Swiper切换
+			loop : true,//无缝循环
+			spaceBetween : 10,
+			centeredSlides: true,
+			slidesPerView:1.5
+			
+	    });					
+    </script>  
+    
+	
+    
+    
+</body>
+</html>

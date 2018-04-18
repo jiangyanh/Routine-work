@@ -1,0 +1,116 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script src="js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>层次选择器</h1>
+$("div > span") 选取元素下元素名是 span 的子元素<br><br
+>
+$(".one+div")<br>
+$(".one").next("div") 选取class为one的下一个 div 同辈元素<br><br>
+$("#two~div")<br>
+$("#two").nextAll("div")  --------后面的所有 div 同辈元素<br><br>
+不同点：$("#prev~div")只能选择ID元素后面的同辈 div元素。而siblings()方法与前后位置无关，只要是同辈节点就都能匹配。<br><br>
+<h1>基本过滤选择器</h1>
+$("input:not(.myClass)")选取class不是myClass的 input 元素<br><br>
+$("input:even") 选取索引是偶数的  input 元素<br>
+$("input:odd")----------奇数的-----------<br><br>
+$("input:gt(1)")选取索引大于1的 input元素（大于1，而不包括1）<br>
+$("input:lt(1)")------小于-----------------------------<br><br>
+$(":focus")选到当前获取焦点的元素<br><br>
+<h1>内容过滤选择器</h1>
+$("div:contains('我')") 选取含有文本"我"的div元素<br><br>
+$("div:has(p)")选取含有 p 元素的 div 元素<br><br><br>
+<h1>属性过滤选择器</h1>
+$("div[id]")选择拥有属性 id 的元素<br><br>
+$("div[title=test]")选取属性title为"test"的div元素<br>
+$("div[title!=test]")-----------不等于-----------<br>
+$("div[title*=test]")-----------含有-----------------<br>
+$("div[title^=test]")选取属性 title 以"test"开始的 div元素<br>
+$("div[title$=test]")---------------------结束的-------<br><br>
+$("div[title|="en"]")选取属性 title 等于en 或以 en为前缀（该字符串后跟一个连接字符'-'）的元素<br><br>
+$("div[title`="uk"]")选取属性 title 用空格分隔的值中包含字符 uk 的元素<br><br>
+$("div[id][title$='test']")选取拥有属性 id ，并且属性 title 以"test" 结束的 div 元素<br><br>
+<h1>子元素过滤选择器</h1>
+:nth-child()  :nth-child(even)   :nth-child(3n+1) <br>
+不同点：:eq(index)是从 0 算起，而:nth-child的index是从1开始的。<br><br>
+:only-child   如果某个元素是它父元素中唯一的子元素，那么将会被匹配。如果父元素中含有其他元素，则不会被匹配。<br><br>
+<h1>表单对象属性过滤选择器</h1>
+$("#forml:enabled")选取 id 为"forml"的表单内的所有可用元素<br>
+$("#form2:disabled")--------------------------不可用元素<br><br>
+$("input:checked")选取所有被选中的  input 元素（单选框、复选框）<br><br>
+$("select option:selected")选取所胡被选中的选项元素<br><br>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<div style="background:#f5f5f5; padding:20px; overflow:hidden;">
+<form id="forml" action="#">
+可用元素<input name="add" value="可用文本框"/><br>
+不可用元素<input name="email"  disabled="disabled" value="不可用文本框"/><br>
+可用元素<input name="che" value="可用文本框"/><br>
+不可用元素<input name="name" disabled="disabled" value="不可用文本框"/><br><br>
+多选框<br>
+<input type="checkbox" name="newletter" checked="checked" value="test1"/>test1
+<input type="checkbox" name="newletter" value="test2"/>test2
+<input type="checkbox" name="newletter" value="test3"/>test3
+<input type="checkbox" name="newletter" checked="checked" value="test4"/>test4
+<input type="checkbox" name="newletter" value="test5"/>test5
+<div></div>
+<br><br>
+下拉列表：1<br>
+<select name="test" multiple="multiple" style="height:100px;">
+	<option>浙江</option>
+    <option selected="selected">湖南</option>
+	<option>北京</option>
+    <option selected="selected">天津</option>
+	<option>广州</option>
+    <option>湖北</option>   
+	<option>广州</option>
+    <option>湖北</option>  
+	<option>广州</option>
+    <option>湖北</option>  
+ 	<option>广州</option>
+    <option>湖北</option>  
+	<option>广州</option>    
+	<option>广州</option>
+    <option>湖北</option>  
+	<option>广州</option>
+    <option>湖北</option>  
+ 	<option>广州</option>
+    <option>湖北</option>  
+	<option>广州</option>
+    <option>湖北</option>                      
+</select>
+<br><br>
+下拉列表：2<br>
+<select name="test2">
+	<option>浙江</option>
+    <option>湖南</option>
+	<option selected="selected">北京</option>
+    <option>天津</option>
+	<option>广州</option>
+    <option>湖北</option>        
+</select>
+<div></div>
+</form>
+<br><br>
+multiple 属性规定输入字段可选择多个值。如果使用该属性，则字段可接受多个值。
+<br><br>
+.val()  方法返回或设置被选元素的值。元素的值是通过 value 属性设置的。该方法大多用于 input 元素。如果该方法未设置参数，则返回被选元素的当前值。
+</div>
+---------------------------------------------------------------------------------------------------------------------------------------------
+<h1>表单选择器</h1>
+$(":text")选取所有的单行文本框<br><br>
+$(":checkbox")选取所有的复选框
+<script>
+$(function(){
+	$("#forml input:enabled").val("这里变化了");
+	$("#forml input:disabled").val("这里变化了02");
+	$("input:checked").length;
+	$("select:selected").text();
+})
+</script>
+</body>
+</html>

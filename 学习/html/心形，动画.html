@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<title>动画</title>
+<style>
+.bg{ width:100%; height:100%; position:relative; overflow:hidden;
+  background: -webkit-linear-gradient(#061431,#06162f,#081736,#092453, #0e3d8d); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#061431,#06162f,#081736,#092453, #0e3d8d); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#061431,#06162f,#081736,#092453, #0e3d8d); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#061431,#06162f,#081736,#092453, #0e3d8d); /* 标准的语法 */        
+
+}
+.hill{position: absolute;
+    bottom: -150px;
+    right: -50%; z-index:2;
+    width: 120%;
+    height:300px;
+    border-top-right-radius: 100%;
+    border-top-left-radius: 0%;
+    background-color: #0f0e14;
+    -moz-transform: rotate(-12deg);
+    -webkit-transform: rotate(-12deg);
+	transform:rotate(-12deg);
+    box-shadow: 0 0 25px #3f6dc3;}	
+/*小女孩*/
+.girl{ width:150px; height:300px; position:fixed; bottom:80px; right:15%; z-index:3;}
+.girl-body{  border-bottom:70px solid #000; width:60px; border-left:20px solid transparent; border-right:20px solid transparent;
+ border-bottom-right-radius:5px;  border-bottom-left-radius:5px;
+ position:absolute; bottom:160px; left:-30px; -moz-transform:rotate(-3deg); -webkit-transform:rotate(-3deg); transform:rotate(-3deg);}
+	/*褪*/
+.left-leg{ border-top:180px solid #000; width:7px; border-left:10px solid transparent; border-right:10px solid transparent; 
+-moz-transform:rotate(-9deg); -webkit-transform:rotate(-9deg); transform:rotate(-9deg); position:absolute; bottom:-5px;}
+.right-leg01{ border-top:120px solid #000; width:4px; border-left:4px solid transparent; border-right:4px solid transparent; position:absolute; bottom:75px; margin-left:12px;
+ border-top-left-radius:0px;  border-top-right-radius:10px;  border-bottom-left-radius:0px; border-bottom-right-radius:100%; -moz-transform:rotate(3deg); -webkit-transform:rotate(3deg); transform:rotate(3deg);}
+.right-leg02{ border-top:100px solid #000; width:4px; border-left:4px solid transparent; border-right:4px solid transparent; position:absolute; bottom:5px; margin-left:30px;
+ border-top-left-radius:0px;  border-top-right-radius:100%;  border-bottom-left-radius:0px; border-bottom-right-radius:100%; -moz-transform:rotate(-22deg); -webkit-transform:rotate(-22deg); transform:rotate(-22deg);}
+	/*脚*/
+.left-foot{ border-bottom:10px solid #000; border-left:7px solid transparent; border-right:7px solid transparent; border-bottom-left-radius:2px; border-bottom-right-radius:0; position:absolute; bottom:-5px; left:0; margin-left:15px;}
+.right-foot{ border-bottom:25px solid #000; border-left:12px solid transparent; border-right:7px solid transparent; border-bottom-left-radius:2px; border-bottom-right-radius:0;  -moz-transform:rotate(-10deg); -webkit-transform:rotate(-10deg); transform:rotate(-10deg); position:absolute; bottom:0px; left:0; margin-left:42px;}
+/*end 小女孩*/	
+</style>
+</head>
+<body>
+<div class="bg">
+	<div class="girl">
+    	<div class="girl-body"></div>
+    	<div class="left-leg"></div>
+        <div class="left-foot"></div>
+        <div class="right-leg01"></div>
+        <div class="right-leg02"></div>
+        <div class="right-foot"></div>
+    </div>
+	<div class="hill"></div>
+</div>
+<script>
+$(function(){
+	bodyW=$(window).width();
+	bodyH=$(window).height();
+	$(".bg").width(bodyW)
+	$(".bg").height(bodyH);
+})
+//$(function(){
+//	animate();
+// 	$(".play").click(animate).mousemove(function(){
+//		$(".play").css({"background-color":"#a55"});
+//	}).mouseout(function(){
+//		$(".play").css({"background-color":"#060"});
+//	})
+//})
+//function animate(){
+//	$('.content > div >div').each(function(id){
+//        $(this).css({
+//			position: 'relative',
+//			top: '-200px',
+//			opacity: 0
+//		});
+//		var wait=Math.floor(Math.random()*3000+1); //Math.random()  返回0-1的随机数， Math.floor(x)返回小于等于X的整数
+//		$(this).delay(wait).animate({
+//			top:'0px',opacity:1},1000);
+//    });
+//}
+</script>
+</body>
+</html>

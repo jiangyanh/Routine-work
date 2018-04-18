@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-3.1.1.min.js"></script> 
+<script>
+$(function(){
+$(".water-menu li").click(function(e){
+	if($(this).hasClass('slider')){
+	 return;
+	}
+	var whatTab=$(this).index();
+	var howFar=160*whatTab;
+	
+	$(".slider").css({left:howFar+"px"});
+	
+	$(".ripple").remove();
+	
+	var posX=$(this).offset().left;
+		posY=$(this).offset().top;
+		buttonWidth=$(this).width();
+		buttonHeight=$(this).height();
+	
+	$(this).prepend("<span class='ripple'></span>");	
+	
+	if(buttonWidth >=buttonHeight){
+		buttonHeight=buttonWidth;
+	}else{
+		buttonWidth=buttonHeight;
+	}
+	
+	var x=e.pageX-posX-buttonWidth/2;
+	var y=e.pageY-posY-buttonHeight/2;
+	
+	$(".ripple").css({
+	 	width:buttonWidth,height:buttonHeight,top:y+'px',left:x+'px'
+	}).addClass("rippleEffect");
+	
+})
+})
+</script>
+<title>水波纹导航</title>
+</head>
+
+<body>
+<ul class="water-menu">
+	<li>Tab One</li>
+    <li>Tab Two</li>
+    <li>Tab Three</li>
+    <li class="slider"></li>
+</ul>
+</body>
+</html>

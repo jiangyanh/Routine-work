@@ -1,0 +1,176 @@
+@charset "utf-8";
+/* CSS Document */
+h3.title{ background:#F90; padding:10px 0; text-align:center; color:#fff; font-size:16px;}
+/*label 有背景的登录*/
+	/*input-缓存*/
+.input-xl{ width:100%; position:absolute; top:37px; left:0px; background:rgba(237,237,237,.9); box-sizing:border-box;  color:#999; z-index:1000; border-radius:6px;}
+.input-xl ul li{ width:100%; line-height:30px; display:inline-block; width:94%; margin-left:3%; border-bottom:1px solid #dbdbdb; box-sizing:border-box;}
+.input-xl ul li b{ background:url(../images/close.png) no-repeat 100% center; background-size:20px; width:20px; height:20px;  cursor:pointer; float:right; margin-top:5px;}
+	/*end input-缓存*/
+	
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+	/*背景01*/
+.form-group01{ margin:10% auto; width:89%;}			
+.form-group01 label{display: block;  background: #ededed;  height:25px; line-height:25px; margin-top: 12px;padding:5px 0; border-radius: 6px;}
+.form-group01 input,.form-group02 select{border-style: none;background: none; width: 60%; border-left:1px solid #c1c1c1; border-radius:0; text-indent: 12px; }
+.form-group01 select{ width:85%; -webkit-appearance: none; color:#333; font: 13.3333px Arial;}
+	/*end 背景01*/	
+
+	/*label 左边小图标01*/
+.form-group01 label{position: relative;}
+.form-group01 label i{width: 35px; height:30px; display: inline-block; float:left;}
+.form-group01 .icon-user{background: url(../images/icon-user02.png) no-repeat center 2px;background-size:auto 16px;}
+.form-group01 .icon-lock{background: url(../images/icon-lock02.png) no-repeat center 2px;background-size:auto 20px;}
+.form-group01 .icon-iphone{background: url(../images/icon-iphone.png) no-repeat center 2px;background-size:auto 20px;}
+	/*end label 左边小图标01*/	
+	
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/		
+
+		/*背景02*/
+	.form-group02{ margin:10% auto; width:89%;}		
+	.form-group02 label{display: block;  background: #fcedda;  height:35px; margin-top: 12px; border-radius: 6px;}
+	.form-group02 input,.form-group01 select{border-style: none;background: none; width: 60%; line-height:35px; }
+	.form-group02 select{ width:85%; -webkit-appearance: none; color:#333; font: 13.3333px Arial; line-height:35px; }
+		/*end 背景02*/
+
+
+	
+		/*label 左边小图标02*/
+	.form-group02 label{position: relative;}
+	.form-group02 label i{ width:35px; height:35px; position:relative; background:#fe9315;  display: inline-block; float:left;  margin-right: 7px; border-radius: 6px 0 0 6px;}
+	.form-group02 label i:before{width:20px; height:20px; content: ""; display: inline-block;   position:absolute; left:9px; top:7px;}
+	.form-group02 label i.icon-user:before{background: url(../images/icon-user.png) no-repeat 0 center;background-size:auto 16px;}
+	.form-group02 label i.icon-lock:before{background: url(../images/icon-lock.png) no-repeat 0 center;background-size:auto 18px;}
+	.form-group02 label i.icon-iphone:before{background: url(../images/icon-iphone.png) no-repeat 0 center;background-size:auto 18px;}
+		/*end label 左边小图标02*/	
+				
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/		
+		
+	/*label 左边文字*/
+.form-group01 code,.form-group02 code { text-align: right; height:20px; line-height:20px; display:inline-block;  color: #333; font-weight: normal;  padding: 0 5px 0 10px;   font-size: 1.2rem;}	
+	/*end label左边文字*/	
+	/*label 右边小图标*/	
+.form-group01 label span,.form-group02 label span{ width: 16px;height:25px; display: inline-block; position:absolute; right:10px; top:5px;}
+.icon-del{ background:url(../images/icon-delete.png) no-repeat 0px 8px; background-size:16px;}
+.icon-sj{ background:url(../images/icon-sj.png) no-repeat 0px 8px; background-size:16px;}
+.icon-block{ background:url(../images/icon-block.png) no-repeat 0px 8px; background-size:16px;}
+.icon-none{ background:url(../images/icon-none.png) no-repeat 0px 8px; background-size:16px;}	
+	/*end 右边小图标*/	
+
+	/*获取验证码*/	
+.icon-forget01{ position:absolute; right:10px; top:5px;}
+.icon-forget01 s{ width: 1px;height: 16px; background:#ccc; display: inline-block; margin-right:5px; vertical-align:middle;}
+.icon-forget01 a{ color:#12aaea; text-decoration:none;}	
+	/*end 获取验证码*/	
+
+
+	/*获取验证码2*/	
+.icon-forget02{ position:absolute; right:5px; top:6px;}
+.icon-forget02 a{ color:#fff; text-decoration:none; padding:0 7px; background:#fe9315; height:24px; line-height:24px; border-radius:5px; font-size:12px; display:inline-block;}	
+	/*end 获取验证码2*/			
+	
+.form-group label ::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #FF7800; font-size:1.2rem;
+} 
+.form-group label :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #FF7800;  font-size:1.2rem;
+} 
+.form-group label ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #FF7800;  font-size:1.2rem;
+} 
+.form-group label :-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #FF7800;  font-size:1.2rem;
+} 	
+/*end label 有背景的登录*/
+
+/*Label 无背景的登录界面*/
+.input-mian{ padding:10px;}
+.input-mian label{line-height:30px;margin:10px 0 0 0;overflow:hidden;display:inline-block;width:100%;}
+	/*左边*/
+.input-mian .title-wz{ float:left; width:70px; font-size:14px;}
+	/*end 左边*/	
+	/*右边*/
+.input-mian .div-input{ position:relative; width:100%; padding-left:70px; box-sizing:border-box; -moz-box-sizing:border-box; /* Firefox */-webkit-box-sizing:border-box; /* Safari */}
+.input-mian .x-input{ background:#f2f2f2; font-size:12px; border:1px solid #e6e6e6; text-align:left; padding: 0 5% 0 5%; height:30px; line-height:30px; border-radius:4px; width:100%; box-sizing:border-box}
+.input-mian .x-input:focus{ border:1px solid #fa5401; outline:none;}
+.input-mian .div-input.div-input-select:after{content: ""; position:absolute; top:8px; right:15px; 	width: 8px;
+    height: 8px;
+    vertical-align: middle;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}		/*end 下拉菜单*/
+.input-mian textarea{ height:70px; line-height:18px; padding:5px;}
+	/*end 右边*/       
+	
+.div-input ::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #FF0000; font-size:1.2rem;
+} 
+.div-input :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #FF0000;  font-size:1.2rem;
+} 
+.div-input ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #FF0000;  font-size:1.2rem;
+} 
+.div-input :-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #FF0000;  font-size:1.2rem;
+} 	
+/*end Label 无背景的登录界面*/
+
+/*细节*/
+	/*记住登录*/
+.remeber{padding-top: 10px;}
+.remeber p{display: inline-block;width: 50%;  }
+.remeber input{width: 20px; height:20px; margin-bottom: 2px;vertical-align: bottom;}
+
+		/*复选框*/
+.chk_1 { 
+    display: none; 
+} 
+ 
+.chk_1 + label {  width: 18px; height:18px; line-height:18px; padding:0; margin:0; margin-right:5px; vertical-align:middle; float:left;
+    position: relative; background:url(../images/checkbox-01.png) no-repeat; background-size:18px;
+} 
+ 
+.chk_1:checked + label { 
+background:url(../images/checkbox-01-in.png) no-repeat; background-size:18px;
+} 
+ 
+		/*end 复选框*/
+	/*记住登录*/
+	/*忘记密码*/
+.remeber span,.remeber b{float: right;}
+.remeber span a{ color: #ff8d2b; display: inline-block; border:1px solid #ff8d2b;  text-align: center; 
+    padding: 5px 10px;   font-size: 1.2rem;  border-radius: 6px; }
+.remeber b a{ font-weight:normal;  color: #12aaea;}
+	/*end 忘记密码*/
+/*end 细节*/
+
+/*单个提交按钮*/
+.btn-tj{width: 100%;line-height: 40px;background: #12aaea;color: #fff;text-align: center;border-style: none;border-radius:6px;font-size: 18px; margin-top: 12px; background-color: #1bb4f5;}
+/*end 单个提交按钮*/
+
+/*两个按钮*/
+.btn-groups{margin-bottom: 20px; overflow:hidden; width:100%;}
+.btn-groups button{display: inline-block;width: 49%; float:left;}
+.btn-groups button:first-child{margin-right: 2%;}
+
+.btn-groups-exit{ margin-top:8px;}
+.btn-groups-exit button:last-child{ background:#a0a0a0; color:#fff;}
+/*end 两个按钮*/
+
+/*--遮罩 加载中--*/
+.zhezhao{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:1000;}
+.zhezhao .zhezhao-box {
+    width: 15%;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%); z-index:1000;
+    text-align: center;
+}
+.zhezhao .zhezhao-box img{ width:100%; opacity:0.3;}
+/*--end 遮罩 加载中--*/

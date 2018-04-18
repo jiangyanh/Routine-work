@@ -1,0 +1,40 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <script src="js/jquery-3.1.1.min.js"></script>   
+    <title></title> 
+    <style>
+        
+        p{ width: 100px; float: left; position: relative;}
+        div{ position: absolute; }
+    </style>
+</head>
+<body>    
+ <p><a href="#" class="tooltip" title="这是我的超链接提示1">提示1</a></p>
+  <p><a href="#" class="tooltip" title="这是我的超链接提示2">提示2</a></p>
+  <p><a href="#"  title="这是自带提示1">自带提示1</a></p>
+  <p><a href="#"  title="这是自带提示2">自带提示2</a></p> 
+<script>  
+$(function(){
+var x=10;
+var y=20;
+    $("a.tooltip").mouseover(function(e){
+        this.myTitle=this.title;
+        this.title=""
+//创建<div>元素
+    var tooltip="<div id='tooltip'>"+this.myTitle+"</div>";
+    $("body").append(tooltip);  //将它追加到文档中
+    $("#tooltip").css({
+        "top":(e.pageY+y)+"px","left":(e.pageX+x)+"px"
+    }).show("fast")
+    }).mouseout(function(){
+        this.title=this.myTitle;
+        $("#tooltip").remove();
+    }).mousemove(function(e) {
+        $("#tooltip").css({"top":(e.pageY+y)+"px","left":(e.pageX+x)+"px"})
+    });
+})   
+</script>
+</body>
+</html>

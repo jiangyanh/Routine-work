@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+</head>
+<style>
+
+/*弹框*/
+*{ padding:0; margin:0; font-style:normal;}
+.paopao-cover{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index:1001;
+}	
+.paopao-pack{  
+	position: fixed;
+    z-index: 1002;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);  background:#fff; border-radius:6px; margin:0 7%;}
+.paopao-pack .colse{ position:absolute; top:-50px; right:10px;}		
+.paopao-pack .colse img{ width:30px;}
+.paopao-pack h3{ width:100%; padding:0; margin:0; font-weight:normal;}
+.paopao-pack h3 img{ width:100%;}		
+.paopao-pack .pp1{ font-size:1.4rem; margin:5px 15px; position:relative; color:#333333; line-height:20px; border-bottom:1px dotted #aaa; padding-bottom:10px;}
+.paopao-pack .pp1 img{ width:25px; float:left; vertical-align:middle; margin:5px 5px 0 0;}
+.paopao-pack .pp1 span{ color:#ff4f51;}
+.paopao-pack .pp2 b{ font-size:1.5rem; margin:1rem 0; display:block;}
+.paopao-pack .pp2 p i{ width:1.4rem; height:1.4rem; line-height:1.4rem; text-align:center; background:#ff4f51; border-radius:50%; font-style:normal; font-size:12px; color:#fff; display:inline-block; float:left; margin:3px 5px 0 0;}
+.paopao-pack .pp2 p{ font-size:1.2rem; line-height:2.4rem; color:#333;}
+.paopao-pack .pp3{ margin:5px 15px; }
+.paopao-pack .pp3 p{ font-size:1.1rem;line-height:1.8rem;   color:#666;}
+
+.button-bj{ width:100%; border-radius:0 0 8px 8px;  text-align:center; } 
+.button-bj button{ background:#ff3b3b; color:#fff; text-align:center; border-radius:0 0 4px 4px; border:none; padding:8px 0; width:100%; margin:10px 0 0 0; font-size:15px;}
+/*end 弹框*/
+@media only screen and (max-width: 800px) {
+html {
+	font-size:75%;
+}
+}
+@media only screen and (max-width: 435px) {
+html {
+	font-size:68.8%;
+}	
+}
+@media only screen and (max-width: 384px) {
+html {
+	font-size:68.8%;
+}
+}
+@media only screen and (max-width: 360px) {
+html {
+	font-size:62.5%;
+}
+.paopao-pack .colse{ position:absolute; top:-36px; right:10px;}		
+.paopao-pack .colse img{ width:22px;}
+}
+</style>
+<body>
+<!--弹框-->
+<div class="paopao-cover">
+    <div class="paopao-pack">
+    		<div class="colse"><img src="../Public/images/tk-close.png"></div>
+            <h3><img src="../Public/images/tk-banner.png"></h3>
+            <p class="pp1"><img src="../Public/images/tk-xtb01.png">玩家可自行下载<span>泡泡手游</span>app，享受泡泡手游折扣。</p>
+            <div class="pp1 pp2">
+            	<b>【泡泡手游特色】</b>
+                <p><i>1</i>折扣更低，首充3折起；</p>
+                <p><i>2</i>游戏更多，5000款热门手游任选；</p>
+                <p><i>3</i>折扣专区，变态福利区，现金回收区应有尽有。</p>
+            </div>
+      <div class="pp2 pp3">
+            	<b>【注意】</b>
+                <p>1、7月31日，壕折吧将关闭壕币充值功能；<br> 2、原壕折吧游戏账号可在泡泡手游继续享受自动折扣。</p>
+            </div>            
+            <div class="button-bj">
+              <button class="fs16 btn-one">下载泡泡手游</button>
+            </div>                 
+  </div> 
+</div>
+<!--end 弹框-->  
+</body>
+</html> 
+ 

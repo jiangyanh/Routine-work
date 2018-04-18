@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+    	<link rel="stylesheet" href="../Public/css/base.css">
+		<script src="../Public/js/jquery-1.9.1.min.js"></script>   
+</head>
+<style>
+/*收藏内页*/
+.shouc{ width:100%; padding:20px 5px;   -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;}
+.shouc ul{ background:#fff; border-radius:8px;}
+.shouc ul li{ position:relative; height:45px; line-height:45px; padding-left:12px;  font-size:1.5rem; border-bottom:1px solid #e1e1e1;}
+.shouc ul li:last-child{ border-bottom:none;}
+.shouc ul li:after{ position: absolute; right:20px; top: 16px; content: "";   width:10px;   height:10px;   border-left:2px solid #ccc;  border-top: 2px solid #ccc; transform: rotate(135deg);  -webkit-transform: rotate(135deg);}
+.shouc ul li a{ font-size:15px; margin-left:0}
+.shouc ul li.hover{ background:url(../Public/images/xtb-jy.png) no-repeat 10px center !important; background-size:20px auto !important;}
+.shouc ul li.bg02{ background:url(../Public/images/xtb-jy01-in.png) no-repeat 10px center !important; background-size:20px auto !important;}
+.shouc ul li.hover a{ margin-left:10px; transition:all 0.5s;}
+.shouc ul li.hover:after{ border:none;}
+.shouc ul li input{ width:20px; height:20px; opacity:0; vertical-align:middle;}
+
+
+.shouc-cz{ width:100%; height:50px; position:fixed; left:0; bottom:0; display:none; background:#fff;}
+.shouc-cz ul li{ float:left; font-size:1.5rem; border-top:1px solid #e1e1e1;}
+.shouc-cz ul li input{ margin-right:10px; width:20px; height:20px; opacity:0; vertical-align:middle;}
+.shouc-cz ul li:nth-child(1){ width:65%; background:#fff; line-height:50px; text-indent:15px;  background:url(../Public/images/xtb-jy.png) no-repeat 15px center !important; background-size:20px auto !important;}
+.shouc-cz ul li:nth-child(1).bg02{ background:url(../Public/images/xtb-jy01-in.png) no-repeat 15px center !important; background-size:20px auto !important;}
+.shouc-cz ul li:nth-child(2){ width:35%; background:#ff3b3b;  line-height:50px; text-align:center; color:#fff;}
+/*end 收藏内页 */
+</style>
+<body class="viewport04 bg-f2">
+<header class="ser-header box-shadow">
+                <div class="ser-header-left img01">
+                    <a href="">
+                        <img src="../Public/images-index/head-back.png">
+                    </a>	
+                </div>
+                 设置  
+	<div class="ser-header-right wenz-r">
+			<a>编辑</a>
+	</div>                                 
+</header>
+<div class="main-question shouc">
+	<ul>
+    	<li><a href="#">什么是首充号</a></li>
+        <li><a href="#">如何续充，续充限次数吗？</a></li>
+        <li><a href="#">哪些账号支持代充？</a></li>
+    	<li><a href="#">什么是首充号</a></li>
+        <li><a href="#">如何续充，续充限次数吗？</a></li>
+        <li><a href="#">哪些账号支持代充？</a></li>
+    	<li><a href="#">什么是首充号</a></li>
+        <li><a href="#">如何续充，续充限次数吗？</a></li>        
+    </ul>
+</div>
+<div class="shouc-cz">
+    	<ul>
+        	<li id="ckbAll"><input type="checkbox">全选</li>
+            <li id="delBtn">删除</li>
+        </ul>
+</div>
+<script>
+$(function(){	
+	$(".wenz-r a").click(function(){	
+	 if($(this).html().indexOf("编辑")!=-1){
+		$(this).html("完成")	
+		addIput()							//添加复选框
+		$(".shouc ul li").addClass("hover")	//添加input未选中时样式	
+		
+		//input选中效果
+		var inputC=$(".shouc input:checkbox")
+		inputC.bind('click',function(){
+			if(this.checked){
+				$(this).parent().addClass("bg02") //添加input选中时样式	
+			}else{
+				$(this).parent().removeClass("bg02")
+			}
+		})	
+			
+	}else{
+		$(this).html("编辑")	
+		$(".shouc ul li").find("input").remove(); //input移除
+		$(".shouc-cz").hide();                    //全选box隐藏
+		$(".shouc ul li").removeClass("hover")   //li的样式 hover移除
+	}
+	
+	})
+		
+	
+	// 下面实现全选功能 
+	$("#ckbAll").bind('click',function(){
+			if($(this).find("input").is(':checked')){
+				$(this).addClass("bg02")
+				$(".shouc input:checkbox").each(function(){
+					this.checked = true;
+					$(".shouc ul li").addClass("bg02")
+					
+				});
+			}else{
+				$(this).removeClass("bg02")
+				$(".shouc input:checkbox").each(function(){
+				this.checked = false;
+				$(".shouc ul li").removeClass("bg02")
+				})
+			}
+	
+	})
+	
+	
+	 // 下面是删除的操作
+	$("#delBtn").bind("click",function(){
+		
+		$(".shouc input:checkbox").each(function(){
+			if(this.checked){
+				$(this).parent().remove();
+			}
+		
+		})
+	
+	})
+	
+	
+	//创建复选框
+	function addIput(){
+		var ipt=$("<input/>")
+		ipt.attr("type","checkbox")
+		//li内部添加复选框
+		var liBox=$(".shouc ul li")
+		liBox.prepend(ipt)	
+		//全选显示
+		$(".shouc-cz").show();
+	}
+	
+})
+</script>
+</body>
+</html>

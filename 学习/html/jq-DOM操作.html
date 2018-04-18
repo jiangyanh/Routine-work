@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script src="js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+<h1>查找节点</h1>
+<b style="color:#ff6600">查找元素节点</b><br>
+$("ul li:eq(1)");   <br>
+$li.text()      <br><br>
+<b style="color:#ff6600">查找属性节点</b><br>
+$("p").attr("title")    //获取p元素节点属性title<br>
+利用jq选择器查找到需要的元素之后，就可以使用 attr()方法来获取它的各种属性的值。
+<br><br>
+<h1>创建节点</h1>
+<b style="color:#ff6600">创建元素节点</b><br><br>
+<b>添加子节点到DOM节点树上</b><br><br>
+添加子节点：<img src="images/012.jpg"><br>
+添加到DOM树上：<img src="images/013.jpg"><br>
+<b style="padding:20px; background:#ebebeb; overflow:hidden; display:block;"><img src="images/014.jpg"></b><br><br>
+<b style="color:#ff6600">创建文本节点</b><br><br>      
+<img src="images/015.jpg"><br><br>      
+<b style="color:#ff6600">创建属性节点</b><br><br>
+<img src="images/016.jpg"><br><br>      
+<h1>插入节点</h1>
+<img src="images/017.jpg"><br><br>  
+<img src="images/018.jpg"><br><br>
+<h1>删除节点<b style="color:#ff6600">remover()</b>/<b style="color:#ff6600">detach()</b>/<b style="color:#ff6600">empty()</b></h1>
+<b>remover()</b><br><br>
+$("ul" li:eq(1)).remover();<br><br>
+<b>detach()</b><br><br>
+所有绑定的事件、附加的数据等都会保留下来。(标签和内容暂时删除)<br><br>
+<b>empt()</b><br><br>
+(内容删除)<br><br>
+<h1>复制节点</h1>
+<b>clone()</b><br><br>
+$(this).clone(true).appendTo("ul");<br><br>
+true,复制元素的同时复制元素所绑定的事件。<br><br>
+</body>
+</html>

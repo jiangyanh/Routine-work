@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>向上滑动公告</title>
+<script src="../Public/js/jquery-1.9.1.min.js"></script>
+<script src="../Public/js/min.js"></script>
+<style>
+*{margin:0;padding:0;list-style: none; font-style:normal;}
+body{margin:0; padding:0; background:#ebebeb;}
+
+.news{ margin:20px 26px 0px 0; height:382px; *height:407px; zoom:1;overflow: hidden; position:relative;}
+.news-list {border-bottom:1px dashed #cdcdcd; height:382px; *height:407px;}
+.news-list li{ height:68px; border-bottom:1px dashed #ccc; padding:10px 0 15px 0;}
+.news-list .user { height: 44px;line-height: 44px;clear: both; background: url(../images/bg2.png) no-repeat -456px -364px; padding-left: 50px;}
+.news-list .user span{ float: right; color:#999999; font-size: 14px;}
+.news-list p{ padding-top:8px;}
+.news-list  p em{ color:#dd3435;}
+</style>
+</head>
+
+<body>
+<!--第一个上线可能有问题，第二个快返pc 线上无问题-->
+<div class="news" id="rollAD">
+					<ul class="news-list" id="rollText">
+ 						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>                                           
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+					</ul>
+                    </div>
+<script type="text/javascript">
+// <![CDATA[
+var textDiv = document.getElementById("rollText");
+var textList = textDiv.getElementsByTagName("li");
+if(textList.length > 5){
+	var textDat = textDiv.innerHTML;
+	var br = textDat.toLowerCase().indexOf("<br",textDat.toLowerCase().indexOf("<br")+3);
+	//var textUp2 = textDat.substr(0,br);
+	textDiv.innerHTML = textDat+textDat+textDat.substr(0,br);
+	textDiv.style.cssText = "position:absolute; top:0";
+	var textDatH = textDiv.offsetHeight;MaxRoll();
+}
+var minTime,maxTime,divTop,newTop=0;
+function MinRoll(){
+	newTop++;
+	if(newTop<=divTop+95){
+		textDiv.style.top = "-" + newTop + "px";
+	}else{
+		clearInterval(minTime);
+		maxTime = setTimeout(MaxRoll,3000);
+	}
+}
+function MaxRoll(){
+	divTop = Math.abs(parseInt(textDiv.style.top));
+	if(divTop>=0 && divTop<textDatH-95){
+		minTime = setInterval(MinRoll,1);
+	}else{
+		textDiv.style.top = 0;divTop = 0;newTop=0;MaxRoll();
+	}
+}
+// ]]>
+</script>  
+<div class="news">
+					<ul class="news-list" id="ScrollMe">
+ 						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>                                           
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+						<li>
+							<div class="user">
+								<span>1分钟前</span>
+								用户134****5562
+							</div>
+							<p><em>30.00元</em>购买了《少年三国志100元》</p>
+						</li>
+					</ul>
+                    </div> 
+          <script>new srcMarquee("ScrollMe",0,1,200,87,1,4000,1000,87)</script>
+</body>
+</html>

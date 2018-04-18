@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script src="../Public/js/jquery-1.10.1.min.js"></script>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #000;
+}
+.oh {
+	overflow: hidden;
+}
+.hdp {
+	width: 1200px;
+	margin: 0px auto;
+	position: relative;
+	background: #e4574d;
+}
+.pics ul li {
+	display: block;
+	width: 1200px;
+	margin: 0 auto;
+	height: 353px;
+}
+.banners {
+	width: 1200px;
+	height: 353px;
+}
+.banner01 {
+	background-image: url(../Public/images/01.jpg);
+}
+.banner02 {
+	background-image: url(../Public/images/02.jpg);
+}
+.banner03 {
+	background-image: url(../Public/images/03.jpg);
+}
+.banner04 {
+	background-image: url(../Public/images/04.jpg);
+}
+.banner05 {
+	background-image: url(../Public/images/05.jpg);
+}
+/*test*/
+.tab-btn {
+	height: 64px;
+	width: 1200px;
+	background-color: #d34337;
+	position: absolute;
+	left: 0;
+	top: auto;
+}
+.tab-btn ul {
+	display: block;
+	overflow: hidden;
+}
+.tab-btn ul li {
+	font-size: 20px;
+	line-height: 64px;
+	cursor: pointer;
+	color: #fff;
+	float: left;
+	display: block;
+	width: 20%;
+	text-align: center;
+	z-index: 999;
+	background: transparent;
+	background-color: rgba(255,255,255,0);
+}
+.slider {
+	clear: both;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 3px;
+	background-color: #fff !important;
+	transition: all 0.5s;
+	z-index: 1 !important;
+}
+.ripple {
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(1,1,1,.8);
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	position: absolute;
+	opacity: 1;
+	/*z-index: -99;*/
+	display: inherit;
+}
+.rippleEffect {
+	-webkit-animation: rippleDrop .4s linear;
+	animation: rippleDrop .4s linear;
+	position: absolute;
+	display: block;
+}
+ @-webkit-keyframes rippleDrop {
+100% {
+ -webkit-transform: scale(2);
+ transform: scale(2);
+ opacity: 0;
+}
+}
+@keyframes rippleDrop {
+100% {
+ -webkit-transform: scale(2);
+ transform: scale(2);
+ opacity: 0;
+}
+}
+</style>
+</head>
+<body>
+<section class="hdp">
+  <div class="pics">
+    <ul class="banners oh">
+      <li class="banner01" > </li>
+      <li class="banner02" style="display:none;"> </li>
+      <li class="banner03"  style="display:none;"> </li>
+      <li class="banner04" style="display:none;"> </li>
+      <li class="banner05" style="display:none;"> </li>
+    </ul>
+  </div>
+  <div class="tab-btn">
+    <ul>
+      <li>视频直播</li>
+      <li>视频会议</li>
+      <li>视频通信</li>
+      <li>社交网络</li>
+      <li>视频分享</li>
+      <li class="slider"></li>
+    </ul>
+  </div>
+</section>
+<script>
+		 $(function(){
+		  $(".tab-btn ul>li").hover(function(e) {
+		 
+		  if ($(this).hasClass('slider')) {
+			return;
+		  }
+		 
+		  var whatTab = $(this).index();
+
+		  var howFar = 240 * whatTab;
+		  $(".slider").css({
+			left: howFar + "px"
+		  });
+		});
+	   
+		   var index = 0;
+		   var $li = $(".tab-btn ul li");
+			   timer=setInterval(function(){
+					index++; 
+				   if (index==5) {index=0};
+						showImg(index);
+				   $(".slider").css({left: index * 240 + "px"});        
+				   },3000);
+		   
+		   $li.hover(function(){
+				   clearInterval(timer);
+
+			index= $li.index(this);
+			showImg(index);
+				   // alert(index)
+		   },function(){
+				   clearInterval(timer);
+					timer=setInterval(function(){
+						index++;
+						if (index==5||index>5) {index=0};
+						showImg(index);                                  
+						$(".slider").css({left: index * 240 + "px"});  
+				   },3000);
+			   });      
+		  
+		  
+			  function showImg(index){
+				   var $banners = $(".banners li");
+				   $banners.eq(index).fadeIn().siblings().fadeOut();
+			  };
+			 
+			
+			  
+		 })
+		 </script>
+</body>
+</html>
